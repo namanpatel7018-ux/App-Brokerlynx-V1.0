@@ -1,0 +1,32 @@
+BROKERLYNX - BUILD THE APK WITH GITHUB (quick steps)
+
+This ZIP has everything at the top level (no extra outer folder).
+App code and features are unchanged. Only build files were fixed:
+  - .gitignore  (no longer hides the web app / Capacitor files)
+  - .github/workflows/build-apk.yml  (uses the SDK already on GitHub's servers)
+
+STEPS (GitHub Desktop - easiest, no 100-file limit)
+ 1. Unzip this ZIP. You will see build.gradle, app, .github, node_modules ... directly inside.
+ 2. Open your repository folder on your computer (GitHub Desktop > Repository > Show in Explorer).
+ 3. Delete the old files in that folder (keep the hidden ".git" folder), then copy EVERYTHING
+    from the unzipped folder into it. Make sure the hidden ".github" folder is copied too.
+ 4. In GitHub Desktop you will see the changed files. Type a message, click "Commit to main",
+    then "Push origin".
+ 5. On github.com open Actions > "Build Brokerlynx APK" > Run workflow.
+ 6. After ~5-10 minutes download the APK from "Artifacts" at the bottom of the run page.
+
+IMPORTANT
+ - Branch must be "main".
+ - build.gradle and the ".github" folder must be at the TOP of the repository (not inside a sub-folder).
+ - For a signed release APK add the 4 secrets described in BUILD-WITH-GITHUB.md (section C).
+   Without them you still get a working debug APK for testing.
+
+CHANGES IN THIS VERSION
+ - New "Log out" button: More > Account. You stay signed in until you tap it (twice, to confirm).
+ - Forgot password now uses ONLY the emailed 6-digit code (recovery code removed everywhere).
+ - New premium reset screens (email step, then code + new password).
+
+LATEST FIXES
+ - Contact admin popup: the email address now fits inside its box on small phones.
+ - Party brokerage statement PDF: long item names no longer overlap the Quantity column
+   (they wrap to two lines or end with "...").

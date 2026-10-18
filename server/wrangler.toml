@@ -1,0 +1,9 @@
+name = "brokerlynx-otp"
+main = "otp-worker.js"
+compatibility_date = "2025-01-01"
+[vars]
+MAIL_FROM = "Brokerlynx <no-reply@YOUR-VERIFIED-DOMAIN>"
+[[kv_namespaces]]
+binding = "OTP_KV"
+id = "REPLACE_WITH_KV_ID"
+# secrets (not stored here):  wrangler secret put RESEND_API_KEY ; wrangler secret put OTP_SECRET

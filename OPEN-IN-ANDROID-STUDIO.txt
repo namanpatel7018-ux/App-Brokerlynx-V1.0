@@ -1,0 +1,24 @@
+BROKERLYNX - Android Studio project (build.gradle is in this folder)
+====================================================================
+1. Install Android Studio (Hedgehog 2023.1 or newer).
+2. File > Open, select THIS folder (the one that contains build.gradle, settings.gradle and the app folder).
+   Click Trust Project.
+3. Wait for Gradle sync to finish (first time 5-10 minutes, needs internet).
+   If asked to install Android SDK 34 / build tools, click Install.
+4. Build > Build Bundle(s) / APK(s) > Build APK(s). Click "Locate" when done.
+   APK: app/build/outputs/apk/debug/app-debug.apk
+5. Or connect your phone with USB debugging on and press the green Run button.
+
+No npm / Node.js is needed.
+
+Java / Gradle error?  File > Settings > Build, Execution, Deployment > Build Tools > Gradle >
+Gradle JDK -> choose jbr-17 / Embedded JDK, then File > Sync Project with Gradle Files.
+
+Update the app later: replace app/src/main/assets/public/index.html and build again.
+
+Backup reminders (notifications)
+--------------------------------
+This version includes the @capacitor/local-notifications plugin (already added in node_modules and Gradle).
+After the first Gradle sync, the app asks for notification permission the first time the user makes a backup,
+or when they tap "Turn on" in Masters > Backup > Phone reminders. On Android 13+ the system shows a permission dialog.
+Reminders are scheduled 30 days after the last backup, then again a few days later until a new backup is made.

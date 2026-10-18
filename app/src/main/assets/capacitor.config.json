@@ -1,0 +1,16 @@
+{
+	"appId": "com.sunshine.brokerbook",
+	"appName": "Brokerlynx",
+	"webDir": "www",
+	"android": {
+		"allowMixedContent": false,
+		"webContentsDebuggingEnabled": false
+	},
+	"loggingBehavior": "none",
+	"plugins": {
+		"LocalNotifications": {
+			"smallIcon": "ic_stat_backup",
+			"iconColor": "#B98429"
+		}
+	}
+}
